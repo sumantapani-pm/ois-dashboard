@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: main
+    tables:
+      - name: raw_inventory
+
+models:
+  - name: stg_inventory
+    description: "Cleaned inventory data with anomaly classification"
+    columns:
+      - name: client_id
+        data_tests:
+          - not_null
+      - name: sku
+        data_tests:
+          - not_null
+      - name: quantity_on_hand
+        data_tests:
+          - not_null
+      - name: stock_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['STOCKOUT', 'LOW_STOCK', 'DEAD_STOCK', 'HEALTHY']
