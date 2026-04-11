@@ -1,0 +1,5 @@
+﻿sku,location,quantity_on_hand,quantity_sold,reorder_point,last_counted_at
+SKU-001,Warehouse-A,45,120,50,2026-04-01 10:00:00
+SKU-002,Warehouse-A,8,200,30,2026-04-01 10:00:00
+SKU-003,Warehouse-B,0,95,20,2026-04-01 10:00:00
+SKU-004,Warehouse-A,200,15,25,2026-04-01 10:00:00
