@@ -1,10 +1,10 @@
-from fastapi import FastAPI
+﻿from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import sys
 import os
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from api.routes import anomalies, actions, clients
+from api.routes import anomalies, actions, clients, metrics
 
 app = FastAPI(
     title="OIS — Operational Intelligence System API",
@@ -34,6 +34,9 @@ app.include_router(actions.router,
 app.include_router(clients.router,
                    prefix="/clients",
                    tags=["Clients"])
+app.include_router(metrics.router,
+                   prefix="/api/v1",
+                   tags=["Metrics"])
 
 # Health check
 @app.get("/health")
