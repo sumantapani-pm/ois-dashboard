@@ -1,5 +1,6 @@
-fastapi
+﻿fastapi
 uvicorn
 supabase
 python-dotenv
 httpx
+duckdb
